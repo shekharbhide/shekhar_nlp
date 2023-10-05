@@ -1,3 +1,5 @@
+# 2nd assignmnet BOW
+
 import gensim
 import pprint
 from gensim import corpora
