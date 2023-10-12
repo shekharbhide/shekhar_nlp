@@ -1,3 +1,12 @@
+'''
+Name - Shekhar Bhide
+Roll - 6 
+Asg No.1 
+Title - Text Pre-Processing using NLP operations - Tokenization,Stop Words Removel, Lemmatization,
+Part-of-Speech
+
+'''
+
 #import libraries
 import spacy
 nlp = spacy.load("en_core_web_sm")
