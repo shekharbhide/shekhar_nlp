@@ -13,7 +13,7 @@ doc_list = [
    "This technology works on the speech provided by the user breaks it down for proper understanding and processes it accordingly.", 
    "This is a very recent and effective approach due to which it has a really high demand in today’s market. "
    "Natural Language Processing (NLP) is a subfield of artificial intelligence that deals with the interaction between computers and humans in natural language."
-   
+
 ]
 
 tokens1 = [[item for item in line.split()] for line in doc_list]
@@ -41,13 +41,14 @@ Bag of Words :  [[(0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5,
 
 --------------------------------------------------------------------------------------------------------
 
-'''
+''' 
 
 print("\n--------------------------------------------------------------------------------------------------------\n")
 
 
 g_dict = corpora.Dictionary([simple_preprocess(line) for line in doc_list])
 g_bow = [g_dict.doc2bow(simple_preprocess(line)) for line in doc_list]
+print(g_bow)
 
 print("Dictionary : ")
 for item in g_bow:

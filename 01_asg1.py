@@ -25,7 +25,7 @@ about_doc = nlp(about_text)
 print("Sentence Detection----->")
 sentences = list(about_doc.sents)
 len(sentences)
-2
+
 for sentence in sentences:
     print(f"{sentence[:5]}...")
     
@@ -39,11 +39,19 @@ for token in about_doc:
 #Stop Words
 print("Stop Words----->")
 import spacy
-spacy_stopwords = spacy.lang.en.stop_words.STOP_WORDS
-len(spacy_stopwords)
+# Get stop words from spaCy
+stop_words = spacy.lang.en.stop_words.STOP_WORDS
 
-for stop_word in list(spacy_stopwords)[:10]:
-    print(stop_word)
+# Initialize a list to store stop words in the provided text
+my_stop_words = []
+
+# Compare tokens in the text with spaCy's stop words
+for token in about_doc:
+    if token.lower_ in stop_words:
+       my_stop_words.append(token.text)
+
+for token in my_stop_words:
+    print(token)
 
 
 #Lemmatization

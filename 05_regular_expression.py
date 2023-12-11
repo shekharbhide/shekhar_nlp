@@ -15,7 +15,7 @@ nlp = spacy.load("en_core_web_sm")
 
 # Define regular expressions
 url_pattern = re.compile(r'https?://\S+|www\.\S+')
-ip_address_pattern = re.compile(r'\b(?:\d{1,3}\.){3}\d{1,3}\b')
+ip_address_pattern = re.compile(r'\b(?:\d{1,3}\.){3}\d{1,3}\b') #192.168.1.1. 
 date_pattern = re.compile(r'\d{4}-\d{2}-\d{2}')
 pan_number_pattern = re.compile(r'[A-Z]{5}[0-9]{4}[A-Z]')
 
@@ -25,7 +25,7 @@ def extract_entities(text):
     
     # Find entities using regular expressions
     urls = re.findall(url_pattern, text)
-    ip_addresses = re.findall(ip_address_pattern, text)
+    ip_addresses = re.findall(ip_address_pattern, text) #192.168.1.1. 
     dates = re.findall(date_pattern, text)
     pan_numbers = re.findall(pan_number_pattern, text)
     
@@ -41,15 +41,16 @@ def extract_entities(text):
     }
 
 # Example usage
-text_data = """
+text_data = '''
 Here is a sample text with a URL: https://www.example.com.
 Also, an IP address: 192.168.1.1. The date is 2023-01-01,
 and a PAN number is ABCDE1234F.
-"""
+'''
+
 
 results = extract_entities(text_data)
 
 print("URLs:", results['urls'])
 print("IP Addresses:", results['ip_addresses'])
 print("Dates:", results['dates'])
-print("PAN Numbers:", results['pan'])
+print("PAN Numbers:", results['pan_numbers'])

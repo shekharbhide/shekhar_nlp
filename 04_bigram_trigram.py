@@ -28,16 +28,17 @@ sentence = '''Your smile makes me smile Your laugh makes me laugh Your eyes are 
 trigrams = ngrams(sentence.split(), n)
 for item in trigrams:
     print(item)
-
+print('\n\n\n')
+print('FROM TEXT FILE ----------------------')
 # Using text file input
-file = open("/home/exam/Awesome-NLP/Num.txt")
+file = open(r"C:\Users\Admin\Desktop\shekhar_nlp\ngram.txt")
 for i in file.readlines():
     cumulative = i
     sentences = i.split(".")
     counter = 0
     for sentence in sentences:
         print("For sentence", counter + 1, ", trigrams are: ")
-        trigrams = ngrams(sentence.split(" "), 3)
+        trigrams = ngrams(sentence.split(), 3)
         for grams in trigrams:
             print(grams)
         counter += 1
